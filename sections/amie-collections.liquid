@@ -9,60 +9,100 @@
     </div>
 
     <div class="amie-collection-grid">
+      <!-- 1. New Born -->
       <a class="amie-collection-card" href="{{ routes.collections_url }}/all">
-        <div class="amie-collection-card__image">
-          <img src="{{ 'fhd-banner-newborn.jpg' | asset_url }}" alt="New Born (0-6M)" width="300" height="360" loading="lazy">
+        <div class="amie-collection-card__arch" style="background-color: #fde8e8;">
+          <img src="{{ 'fhd-banner-newborn.jpg' | asset_url }}" alt="New Born" width="300" height="360" loading="lazy">
         </div>
-        <p>New Born</p>
+        <span class="amie-collection-card__title">New Born</span>
+        <span class="amie-collection-card__sub">(0-6 Months)</span>
+        <div class="amie-collection-card__btn" style="background-color: #f87171;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
       </a>
 
+      <!-- 2. Baby Clothing -->
       <a class="amie-collection-card" href="{{ routes.collections_url }}/all">
-        <div class="amie-collection-card__image">
-          <img src="{{ 'b-essentials.jpg' | asset_url }}" alt="Baby (0-2 Yrs)" width="300" height="360" loading="lazy">
+        <div class="amie-collection-card__arch" style="background-color: #fce7f3;">
+          <img src="{{ 'p-romper.jpg' | asset_url }}" alt="Baby Clothing" width="300" height="360" loading="lazy">
         </div>
-        <p>Baby (0-2)</p>
+        <span class="amie-collection-card__title">Baby Clothing</span>
+        <span class="amie-collection-card__sub">(6-24 Months)</span>
+        <div class="amie-collection-card__btn" style="background-color: #f87171;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
       </a>
 
+      <!-- 3. Kids Clothing -->
       <a class="amie-collection-card" href="{{ routes.collections_url }}/all">
-        <div class="amie-collection-card__image">
-          <img src="{{ 'fhd-banner-kids.jpg' | asset_url }}" alt="Kids (3-10 Yrs)" width="300" height="360" loading="lazy">
+        <div class="amie-collection-card__arch" style="background-color: #e0f2fe;">
+          <img src="{{ 'fhd-banner-kids.jpg' | asset_url }}" alt="Kids Clothing" width="300" height="360" loading="lazy">
         </div>
-        <p>Kids (3-10)</p>
+        <span class="amie-collection-card__title">Kids Clothing</span>
+        <span class="amie-collection-card__sub">(3-10 Years)</span>
+        <div class="amie-collection-card__btn" style="background-color: #38bdf8;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
       </a>
 
+      <!-- 4. Footwear -->
       <a class="amie-collection-card" href="{{ routes.collections_url }}/all">
-        <div class="amie-collection-card__image">
+        <div class="amie-collection-card__arch" style="background-color: #dcfce7;">
           <img src="{{ 'b-footwear.jpg' | asset_url }}" alt="Footwear" width="300" height="360" loading="lazy">
         </div>
-        <p>Footwear</p>
+        <span class="amie-collection-card__title">Footwear</span>
+        <span class="amie-collection-card__sub">(First Walkers)</span>
+        <div class="amie-collection-card__btn" style="background-color: #4ade80;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
       </a>
 
+      <!-- 5. Baby Care -->
       <a class="amie-collection-card" href="{{ routes.collections_url }}/all">
-        <div class="amie-collection-card__image">
+        <div class="amie-collection-card__arch" style="background-color: #fef9c3;">
           <img src="{{ 'p-careset.jpg' | asset_url }}" alt="Baby Care" width="300" height="360" loading="lazy">
         </div>
-        <p>Baby Care</p>
-      </a>
-
-      <a class="amie-collection-card" href="{{ routes.collections_url }}/all">
-        <div class="amie-collection-card__image">
-          <img src="{{ 'b-gifts.jpg' | asset_url }}" alt="Gift Hampers" width="300" height="360" loading="lazy">
+        <span class="amie-collection-card__title">Baby Care</span>
+        <span class="amie-collection-card__sub">Tested Care</span>
+        <div class="amie-collection-card__btn" style="background-color: #facc15;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
-        <p>Gift Sets</p>
       </a>
 
+      <!-- 6. Accessories -->
       <a class="amie-collection-card" href="{{ routes.collections_url }}/all">
-        <div class="amie-collection-card__image">
-          <img src="{{ 'p-boysset.jpg' | asset_url }}" alt="Toys & Games" width="300" height="360" loading="lazy">
+        <div class="amie-collection-card__arch" style="background-color: #fce7f3;">
+          <img src="{{ 'b-essentials.jpg' | asset_url }}" alt="Accessories" width="300" height="360" loading="lazy">
         </div>
-        <p>Toys &amp; Games</p>
+        <span class="amie-collection-card__title">Accessories</span>
+        <span class="amie-collection-card__sub">Hats &amp; Bows</span>
+        <div class="amie-collection-card__btn" style="background-color: #f87171;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
       </a>
 
+      <!-- 7. Toys & Gifts -->
       <a class="amie-collection-card" href="{{ routes.collections_url }}/all">
-        <div class="amie-collection-card__image">
+        <div class="amie-collection-card__arch" style="background-color: #e0f2fe;">
+          <img src="{{ 'b-gifts.jpg' | asset_url }}" alt="Toys & Gifts" width="300" height="360" loading="lazy">
+        </div>
+        <span class="amie-collection-card__title">Toys &amp; Gifts</span>
+        <span class="amie-collection-card__sub">Hampers</span>
+        <div class="amie-collection-card__btn" style="background-color: #38bdf8;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <!-- 8. School Essentials -->
+      <a class="amie-collection-card" href="{{ routes.collections_url }}/all">
+        <div class="amie-collection-card__arch" style="background-color: #dcfce7;">
           <img src="{{ 'c-school.jpg' | asset_url }}" alt="School Essentials" width="300" height="360" loading="lazy">
         </div>
-        <p>School</p>
+        <span class="amie-collection-card__title">Big Kids</span>
+        <span class="amie-collection-card__sub">(6-10 Years)</span>
+        <div class="amie-collection-card__btn" style="background-color: #10b981;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
       </a>
     </div>
   </div>
