@@ -1,0 +1,9 @@
+<section class="amie-section">
+  <div class="amie-shell">
+    <div class="amie-collection-grid">
+      {% assign handles = 'new-born,baby-clothing,kids-clothing,footwear,baby-care,accessories,toys-gifts,school-essentials' | split: ',' %}
+      {% for handle in handles %}{% assign collection = collections[handle] %}{% if collection != blank %}<a class="amie-collection-card" href="{{ collection.url }}"><div class="amie-collection-card__image">{% if collection.image %}{{ collection.image | image_url: width: 500 | image_tag: loading: 'lazy', alt: collection.title }}{% elsif collection.products.first.featured_image %}{{ collection.products.first.featured_image | image_url: width: 500 | image_tag: loading: 'lazy', alt: collection.title }}{% endif %}</div><p>{{ collection.title }}</p></a>{% endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}{"name":"Age collections","settings":[],"presets":[{"name":"Age collections"}]}{% endschema %}

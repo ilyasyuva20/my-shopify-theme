@@ -1,0 +1,15 @@
+{
+  "type": "header",
+  "name": "Amie header",
+  "sections": {
+    "header": {
+      "type": "header",
+      "settings": {
+        "menu": "main-menu"
+      }
+    }
+  },
+  "order": [
+    "header"
+  ]
+}

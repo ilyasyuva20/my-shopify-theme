@@ -1,0 +1,83 @@
+:root {
+  --ink: #1b2d42;
+  --sky: #d5eff4;
+  --blue: #006fa6;
+  --coral: #f87171;
+  --yellow: #facc15;
+  --mint: #e5f3e7;
+  --cream: #faf8f5;
+  --line: #e5e7eb;
+  --display: 'Trebuchet MS', 'Avenir Next', sans-serif;
+  --body: 'Trebuchet MS', 'Avenir Next', sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: #fff; color: var(--ink); font-family: var(--body); }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+.amie-shell { max-width: 1440px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+.amie-topbar { background: var(--sky); border-bottom: 1px solid #c8e7ed; color: #1e3b4d; font-size: 12px; padding: 9px 0; }
+.amie-topbar__inner, .amie-header__inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.amie-topbar__links { display: flex; gap: 20px; }
+.amie-header { position: sticky; top: 0; z-index: 20; background: #fff; border-bottom: 1px solid #f0f2f4; }
+.amie-header__inner { min-height: 78px; }
+.amie-logo { font: 900 24px var(--display); letter-spacing: -.05em; color: var(--ink); }
+.amie-logo span { color: var(--coral); }
+.amie-nav { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; }
+.amie-nav a { padding: 8px 10px; border-radius: 8px; }
+.amie-nav a:hover { color: var(--blue); background: #eefaff; }
+.amie-nav a:last-child { color: #fff; background: var(--coral); border-radius: 999px; padding-inline: 16px; }
+.amie-actions { display: flex; align-items: center; gap: 14px; font-size: 14px; }
+.amie-action { display: inline-flex; gap: 5px; align-items: center; padding: 8px; }
+.amie-cart-count { color: #fff; background: var(--coral); border-radius: 999px; min-width: 20px; height: 20px; display: inline-grid; place-items: center; font-size: 11px; }
+.amie-hero { position: relative; min-height: 530px; overflow: hidden; background: var(--mint); }
+.amie-hero__slide { display: grid; grid-template-columns: 1fr 1fr; min-height: 530px; }
+.amie-hero__copy { align-self: center; padding: 56px max(24px, calc((100vw - 1392px) / 2)); padding-right: 40px; }
+.amie-hero__badge, .amie-pill { display: inline-block; border: 1px solid #dce4e8; border-radius: 999px; background: rgba(255,255,255,.9); padding: 7px 13px; font-size: 11px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.amie-hero h1 { max-width: 570px; margin: 18px 0 10px; font: 900 clamp(32px, 4vw, 58px)/1.02 var(--display); }
+.amie-hero h1 span { color: var(--blue); display: block; }
+.amie-hero__offer { margin: 14px 0 8px; font-size: 32px; font-weight: 900; }
+.amie-hero__copy p { max-width: 510px; line-height: 1.6; }
+.amie-hero__image { width: 100%; height: 100%; object-fit: cover; min-height: 530px; }
+.amie-button { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; border: 0; border-radius: 999px; padding: 14px 23px; background: var(--blue); color: #fff; font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: .05em; }
+.amie-dots { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); display: flex; gap: 7px; }
+.amie-dots button { width: 10px; height: 10px; border: 0; border-radius: 50%; background: #c7d0d5; cursor: pointer; }
+.amie-dots button.is-active { width: 25px; border-radius: 999px; background: #f97316; }
+.amie-section { padding: 68px 0; }
+.amie-section--cream { background: var(--cream); }
+.amie-section__heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 34px; }
+.amie-section__heading h2 { margin: 5px 0 0; font: 900 40px/1 var(--display); }
+.amie-kicker { color: var(--coral); font-size: 12px; font-weight: 900; letter-spacing: .2em; text-transform: uppercase; }
+.amie-collection-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 18px; }
+.amie-collection-card { text-align: center; font-weight: 900; font-size: 13px; }
+.amie-collection-card__image { aspect-ratio: .82; overflow: hidden; border-radius: 100px 100px 18px 18px; background: #e0f2fe; padding: 9px; }
+.amie-collection-card img { width: 100%; height: 100%; object-fit: cover; border-radius: 90px 90px 12px 12px; transition: transform .35s; }
+.amie-collection-card:hover img { transform: scale(1.05); }
+.amie-collection-card p { margin: 12px 0 0; }
+.amie-promo-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 24px; }
+.amie-promo { position: relative; min-height: 340px; overflow: hidden; border-radius: 30px; padding: 46px; }
+.amie-promo--blue { background: #e0f2fe; } .amie-promo--green { background: var(--mint); }
+.amie-promo h3 { max-width: 420px; margin: 14px 0 10px; font: 900 42px/1.02 var(--display); }
+.amie-promo p { max-width: 400px; line-height: 1.5; }
+.amie-promo img { position: absolute; right: 18px; bottom: -22px; width: 245px; height: 245px; object-fit: cover; border-radius: 50%; }
+.amie-trust { border-block: 1px solid var(--line); background: var(--cream); padding: 22px 0; }
+.amie-trust__grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.amie-trust__item { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 900; }
+.amie-trust__icon { display: grid; place-items: center; flex: 0 0 42px; height: 42px; border-radius: 50%; background: #fff; color: #94d257; font-size: 20px; }
+.amie-products { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; }
+.amie-product { overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: #fff; }
+.amie-product__image { aspect-ratio: 1; overflow: hidden; background: #f7f8f9; }
+.amie-product__image img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
+.amie-product:hover img { transform: scale(1.05); }
+.amie-product__body { padding: 14px; }
+.amie-product__body h3 { margin: 0 0 8px; font: 800 15px/1.25 var(--display); }
+.amie-price { font-weight: 900; } .amie-compare { margin-left: 6px; color: #8b95a0; font-size: 12px; text-decoration: line-through; }
+.amie-social-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 10px; }
+.amie-social-grid img { aspect-ratio: 1; width: 100%; object-fit: cover; border-radius: 16px; }
+.amie-footer { background: var(--ink); color: #faf8f5; padding-top: 60px; }
+.amie-footer__grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.4fr; gap: 40px; padding-bottom: 50px; }
+.amie-footer h3 { color: var(--yellow); font: 800 13px var(--display); letter-spacing: .16em; text-transform: uppercase; }
+.amie-footer p, .amie-footer a { color: rgba(250,248,245,.72); font-size: 14px; line-height: 1.6; }
+.amie-footer ul { list-style: none; padding: 0; margin: 18px 0 0; } .amie-footer li { margin: 10px 0; }
+.amie-footer__bottom { border-top: 1px solid rgba(255,255,255,.12); padding: 20px 0; font-size: 12px; }
+@media (max-width: 1050px) { .amie-nav { display: none; } .amie-collection-grid { grid-template-columns: repeat(4, 1fr); } .amie-products { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 700px) { .amie-shell { padding-left: 16px; padding-right: 16px; } .amie-topbar__links { display: none; } .amie-header__inner { min-height: 66px; } .amie-hero__slide { grid-template-columns: 1fr; } .amie-hero__copy { padding: 36px 22px 20px; text-align: center; } .amie-hero h1 { margin-inline: auto; } .amie-hero__copy p { margin-inline: auto; } .amie-hero__image { min-height: 260px; max-height: 300px; } .amie-section { padding: 48px 0; } .amie-section__heading h2 { font-size: 32px; } .amie-collection-grid { gap: 12px; } .amie-collection-card { font-size: 11px; } .amie-promo-grid { grid-template-columns: 1fr; } .amie-promo { padding: 30px; min-height: 300px; } .amie-promo h3 { font-size: 32px; max-width: 280px; } .amie-promo img { width: 170px; height: 170px; } .amie-trust__grid { grid-template-columns: repeat(2, 1fr); } .amie-products { grid-template-columns: repeat(2, 1fr); } .amie-footer__grid { grid-template-columns: 1fr 1fr; } .amie-social-grid { grid-template-columns: repeat(4, 1fr); } }

@@ -1,0 +1,41 @@
+{
+  "sections": {
+    "hero": {
+      "type": "amie-hero",
+      "settings": {}
+    },
+    "collections": {
+      "type": "amie-collections",
+      "settings": {}
+    },
+    "promos": {
+      "type": "amie-promos",
+      "settings": {}
+    },
+    "trust": {
+      "type": "amie-trust",
+      "settings": {}
+    },
+    "featured_products": {
+      "type": "amie-products",
+      "settings": {
+        "heading": "Bestsellers",
+        "collection": "all"
+      }
+    },
+    "social_gallery": {
+      "type": "amie-social",
+      "settings": {
+        "heading": "Little moments, shared"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "collections",
+    "promos",
+    "trust",
+    "featured_products",
+    "social_gallery"
+  ]
+}

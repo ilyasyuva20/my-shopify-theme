@@ -1,0 +1,1 @@
+/home/ilyas/ILYAS/Shopify/AMIS/CODE/my-shopify-theme/AGENTS.md

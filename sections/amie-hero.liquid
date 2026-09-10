@@ -1,0 +1,20 @@
+{% assign slides = 'fhd-banner-kids.jpg|END OF SEASON SALE|End Of Season Sale On|Kids Winter & Everyday Essentials|UP TO 50% OFF|Shop Apparel|kids-clothing|e5f3e7,fhd-banner-newborn.jpg|GOTS CERTIFIED ORGANIC|Soft Newborn Wonders|0-6 Months Organic Essentials|FLAT 25% OFF|Shop Newborn Wear|new-born|fff7e6,fhd-banner-main.jpg|LITTLE ADVENTURES|Happier & Brighter|Kinder Everyday Essentials|UP TO 40% OFF|Shop Collection||e0f2fe,fhd-banner-shoes.jpg|FIRST WALKERS & FOOTWEAR|Little Steps,|Big Comfort Pre-Walkers|BUY 2 GET 10% OFF|Shop Footwear|footwear|fef3c7' | split: ',' %}
+<section class="amie-hero" data-amie-slider>
+  {% for slide in slides %}
+    {% assign item = slide | split: '|' %}
+    <div class="amie-hero__slide" data-amie-slide{% unless forloop.first %} hidden{% endunless %} style="background:#{{ item[7] }}">
+      <div class="amie-hero__copy">
+        <span class="amie-hero__badge">{{ item[1] }}</span>
+        <h1>{{ item[2] }}<span>{{ item[3] }}</span></h1>
+        <div class="amie-hero__offer">{{ item[4] }}</div>
+        <p>Thoughtfully chosen organic clothing, soft accessories and everyday essentials for little adventures.</p>
+        {% if item[6] != blank %}<a class="amie-button" href="{{ routes.collections_url }}/{{ item[6] }}">{{ item[5] }} <span aria-hidden="true">→</span></a>{% else %}<a class="amie-button" href="{{ routes.collections_url }}">{{ item[5] }} <span aria-hidden="true">→</span></a>{% endif %}
+      </div>
+      {{ item[0] | asset_url | image_tag: class: 'amie-hero__image', loading: 'eager', alt: item[3] }}
+    </div>
+  {% endfor %}
+  <div class="amie-dots" aria-label="Hero slides">
+    {% for slide in slides %}<button type="button" data-amie-dot="{{ forloop.index0 }}" class="{% if forloop.first %}is-active{% endif %}" aria-label="Show slide {{ forloop.index }}"></button>{% endfor %}
+  </div>
+</section>
+{% schema %}{"name":"Amie hero","settings":[],"presets":[{"name":"Amie hero"}]}{% endschema %}
