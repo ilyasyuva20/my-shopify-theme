@@ -1,20 +1,154 @@
-{% assign slides = 'fhd-banner-kids.jpg|END OF SEASON SALE|End Of Season Sale On|Kids Winter & Everyday Essentials|UP TO 50% OFF|Shop Apparel|kids-clothing|e5f3e7,fhd-banner-newborn.jpg|GOTS CERTIFIED ORGANIC|Soft Newborn Wonders|0-6 Months Organic Essentials|FLAT 25% OFF|Shop Newborn Wear|new-born|fff7e6,fhd-banner-main.jpg|LITTLE ADVENTURES|Happier & Brighter|Kinder Everyday Essentials|UP TO 40% OFF|Shop Collection||e0f2fe,fhd-banner-shoes.jpg|FIRST WALKERS & FOOTWEAR|Little Steps,|Big Comfort Pre-Walkers|BUY 2 GET 10% OFF|Shop Footwear|footwear|fef3c7' | split: ',' %}
+{% comment %}
+  Amie's Baby Studio Hero Carousel Section matching BannerCarousel.tsx
+{% endcomment %}
 <section class="amie-hero" data-amie-slider>
-  {% for slide in slides %}
-    {% assign item = slide | split: '|' %}
-    <div class="amie-hero__slide" data-amie-slide{% unless forloop.first %} hidden{% endunless %} style="background:#{{ item[7] }}">
-      <div class="amie-hero__copy">
-        <span class="amie-hero__badge">{{ item[1] }}</span>
-        <h1>{{ item[2] }}<span>{{ item[3] }}</span></h1>
-        <div class="amie-hero__offer">{{ item[4] }}</div>
-        <p>Thoughtfully chosen organic clothing, soft accessories and everyday essentials for little adventures.</p>
-        {% if item[6] != blank %}<a class="amie-button" href="{{ routes.collections_url }}/{{ item[6] }}">{{ item[5] }} <span aria-hidden="true">→</span></a>{% else %}<a class="amie-button" href="{{ routes.collections_url }}">{{ item[5] }} <span aria-hidden="true">→</span></a>{% endif %}
+  <div class="amie-hero__slides">
+    <!-- Slide 1 -->
+    <div class="amie-hero__slide" data-amie-slide style="background-color: #e5f3e7;">
+      <div class="amie-hero__content">
+        <div class="amie-hero__badge">
+          <svg class="amie-icon-star" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>END OF SEASON SALE</span>
+        </div>
+        <h1 class="amie-hero__title">
+          <span class="amie-hero__title-main">End Of Season Sale On</span>
+          <span class="amie-hero__title-sub">Kids' Winter & Everyday Essentials</span>
+        </h1>
+        <div class="amie-hero__offer">UP TO 50% OFF</div>
+        <p class="amie-hero__subtitle">Durable cotton tees, floral frill dresses & cozy sets for non-stop play.</p>
+        <div class="amie-hero__selling">
+          <span class="amie-hero__selling-label">SELLING:</span>
+          <span class="amie-hero__pill">✓ Cotton Rompers</span>
+          <span class="amie-hero__pill">✓ Frill Dresses</span>
+          <span class="amie-hero__pill">✓ Playwear Tees</span>
+        </div>
+        <div class="amie-hero__cta-wrap">
+          <a href="{{ routes.collections_url }}/kids-clothing" class="amie-hero__cta amie-hero__cta--teal">
+            SHOP APPAREL <span aria-hidden="true">→</span>
+          </a>
+        </div>
       </div>
-      {{ item[0] | asset_url | image_tag: class: 'amie-hero__image', loading: 'eager', alt: item[3] }}
+      <div class="amie-hero__image-wrap">
+        <img src="{{ 'fhd-banner-kids.jpg' | asset_url }}" alt="Kids' Winter & Everyday Essentials" class="amie-hero__img" loading="eager" width="800" height="600">
+      </div>
     </div>
-  {% endfor %}
+
+    <!-- Slide 2 -->
+    <div class="amie-hero__slide" data-amie-slide hidden style="background-color: #fff7e6;">
+      <div class="amie-hero__content">
+        <div class="amie-hero__badge">
+          <svg class="amie-icon-star" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>GOTS CERTIFIED ORGANIC</span>
+        </div>
+        <h1 class="amie-hero__title">
+          <span class="amie-hero__title-main">Soft Newborn Wonders</span>
+          <span class="amie-hero__title-sub">(0-6 Months Organic Essentials)</span>
+        </h1>
+        <div class="amie-hero__offer">FLAT 25% OFF</div>
+        <p class="amie-hero__subtitle">Hypoallergenic 100% organic swaddles, bodysuits & gentle gift hampers.</p>
+        <div class="amie-hero__selling">
+          <span class="amie-hero__selling-label">SELLING:</span>
+          <span class="amie-hero__pill">✓ Swaddles</span>
+          <span class="amie-hero__pill">✓ Organic Bodysuits</span>
+          <span class="amie-hero__pill">✓ Care Hampers</span>
+        </div>
+        <div class="amie-hero__cta-wrap">
+          <a href="{{ routes.collections_url }}/new-born" class="amie-hero__cta amie-hero__cta--coral">
+            SHOP NEWBORN WEAR <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="amie-hero__image-wrap">
+        <img src="{{ 'fhd-banner-newborn.jpg' | asset_url }}" alt="Soft Newborn Wonders" class="amie-hero__img" loading="lazy" width="800" height="600">
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="amie-hero__slide" data-amie-slide hidden style="background-color: #e0f2fe;">
+      <div class="amie-hero__content">
+        <div class="amie-hero__badge">
+          <svg class="amie-icon-star" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>LITTLE ADVENTURES</span>
+        </div>
+        <h1 class="amie-hero__title">
+          <span class="amie-hero__title-main">Happier & Brighter</span>
+          <span class="amie-hero__title-sub">Kinder Everyday Essentials</span>
+        </h1>
+        <div class="amie-hero__offer">UP TO 40% OFF</div>
+        <p class="amie-hero__subtitle">Thoughtfully chosen organic clothing & soft accessories for 0 to 10 years.</p>
+        <div class="amie-hero__selling">
+          <span class="amie-hero__selling-label">SELLING:</span>
+          <span class="amie-hero__pill">✓ Toddler Sets</span>
+          <span class="amie-hero__pill">✓ Soft Shoes</span>
+          <span class="amie-hero__pill">✓ Newborn Hampers</span>
+        </div>
+        <div class="amie-hero__cta-wrap">
+          <a href="{{ routes.collections_url }}" class="amie-hero__cta amie-hero__cta--yellow">
+            SHOP COLLECTION <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="amie-hero__image-wrap">
+        <img src="{{ 'fhd-banner-main.jpg' | asset_url }}" alt="Happier & Brighter" class="amie-hero__img" loading="lazy" width="800" height="600">
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="amie-hero__slide" data-amie-slide hidden style="background-color: #fef3c7;">
+      <div class="amie-hero__content">
+        <div class="amie-hero__badge">
+          <svg class="amie-icon-star" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>FIRST WALKERS & FOOTWEAR</span>
+        </div>
+        <h1 class="amie-hero__title">
+          <span class="amie-hero__title-main">Little Steps,</span>
+          <span class="amie-hero__title-sub">Big Comfort Pre-Walkers</span>
+        </h1>
+        <div class="amie-hero__offer">BUY 2 GET 10% OFF</div>
+        <p class="amie-hero__subtitle">Flexible anti-slip soft sole shoes supporting natural foot development.</p>
+        <div class="amie-hero__selling">
+          <span class="amie-hero__selling-label">SELLING:</span>
+          <span class="amie-hero__pill">✓ Soft Soles</span>
+          <span class="amie-hero__pill">✓ Anti-Slip Soles</span>
+          <span class="amie-hero__pill">✓ First Shoes</span>
+        </div>
+        <div class="amie-hero__cta-wrap">
+          <a href="{{ routes.collections_url }}/footwear" class="amie-hero__cta amie-hero__cta--green">
+            SHOP FOOTWEAR <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="amie-hero__image-wrap">
+        <img src="{{ 'fhd-banner-shoes.jpg' | asset_url }}" alt="Little Steps" class="amie-hero__img" loading="lazy" width="800" height="600">
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Prev/Next Arrows -->
+  <button type="button" class="amie-arrow amie-arrow--prev" data-amie-prev aria-label="Previous Slide">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <button type="button" class="amie-arrow amie-arrow--next" data-amie-next aria-label="Next Slide">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+
+  <!-- Navigation Dots -->
   <div class="amie-dots" aria-label="Hero slides">
-    {% for slide in slides %}<button type="button" data-amie-dot="{{ forloop.index0 }}" class="{% if forloop.first %}is-active{% endif %}" aria-label="Show slide {{ forloop.index }}"></button>{% endfor %}
+    <button type="button" data-amie-dot="0" class="is-active" aria-label="Show slide 1"></button>
+    <button type="button" data-amie-dot="1" aria-label="Show slide 2"></button>
+    <button type="button" data-amie-dot="2" aria-label="Show slide 3"></button>
+    <button type="button" data-amie-dot="3" aria-label="Show slide 4"></button>
   </div>
 </section>
-{% schema %}{"name":"Amie hero","settings":[],"presets":[{"name":"Amie hero"}]}{% endschema %}
+
+{% schema %}
+{
+  "name": "Amie hero",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Amie hero"
+    }
+  ]
+}
+{% endschema %}

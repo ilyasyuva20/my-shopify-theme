@@ -1,77 +1,73 @@
-<header>
-  <h2 class="header__title">
-    {{ shop.name | link_to: routes.root_url }}
-  </h2>
-
-  <div class="header__menu">
-    {% for link in section.settings.menu.links %}
-      {{ link.title | link_to: link.url }}
-    {% endfor %}
+{% comment %}
+  Amie's Baby Studio Header & Topbar matching exact design
+{% endcomment %}
+<div class="amie-topbar">
+  <div class="amie-shell amie-topbar__inner">
+    <div class="amie-topbar__left">
+      <svg class="amie-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-5l-3-4h-4v10Z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+      <span>Free Shipping on Orders Above ₹999 across India</span>
+    </div>
+    <div class="amie-topbar__center">
+      <span>Little Things. Brighter Tomorrows</span>
+      <svg class="amie-icon amie-icon--heart" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    </div>
+    <div class="amie-topbar__right">
+      <a href="{{ routes.all_products_collection_url }}" class="amie-topbar__link">
+        <svg class="amie-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Our Stores in Kochi</span>
+      </a>
+      <a href="{{ routes.root_url }}pages/contact" class="amie-topbar__link">
+        <svg class="amie-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span>Help &amp; FAQs</span>
+      </a>
+    </div>
   </div>
+</div>
 
-  <div class="header__icons">
-    {% if shop.customer_accounts_enabled %}
-      <shopify-account menu="{{ section.settings.customer_account_menu }}">
-        {{ 'icon-account.svg' | inline_asset_content }}
-      </shopify-account>
-    {% endif %}
-
-    <a href="{{ routes.cart_url }}">
-      {% if cart.item_count > 0 %}
-        <sup>{{ cart.item_count }}</sup>
-      {% endif %}
-
-      {{ 'icon-cart.svg' | inline_asset_content }}
+<header class="amie-header">
+  <div class="amie-shell amie-header__inner">
+    <a href="{{ routes.root_url }}" class="amie-logo-lockup" aria-label="Amie's Baby Studio Home">
+      <span class="amie-logo-text">
+        <span class="amie-ch amie-ch--yellow">A</span><span class="amie-ch amie-ch--sky">m</span><span class="amie-ch amie-ch--green amie-ch--i">i<svg class="amie-daisy" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5.6" r="5.1"/><circle cx="18.1" cy="10" r="5.1"/><circle cx="15.8" cy="17.2" r="5.1"/><circle cx="8.2" cy="17.2" r="5.1"/><circle cx="5.9" cy="10" r="5.1"/><circle cx="12" cy="12" r="5.6"/></svg></span><span class="amie-ch amie-ch--coral">e</span><span class="amie-ch amie-ch--green">’</span><span class="amie-ch amie-ch--sky">s</span>
+      </span>
+      <span class="amie-logo-sub">
+        <span class="amie-sub-ch amie-ch--sky">B</span><span class="amie-sub-ch amie-ch--coral">a</span><span class="amie-sub-ch amie-ch--yellow">b</span><span class="amie-sub-ch amie-ch--green">y</span>&nbsp;<span class="amie-sub-ch amie-ch--sky">S</span><span class="amie-sub-ch amie-ch--coral">t</span><span class="amie-sub-ch amie-ch--yellow">u</span><span class="amie-sub-ch amie-ch--green">d</span><span class="amie-sub-ch amie-ch--sky">i</span><span class="amie-sub-ch amie-ch--coral">o</span>
+      </span>
     </a>
+
+    <nav class="amie-nav">
+      <a href="{{ routes.collections_url }}/new-born">New Born</a>
+      <a href="{{ routes.collections_url }}/baby-clothing">Baby (0-2)</a>
+      <a href="{{ routes.collections_url }}/kids-clothing">Kids (3-10)</a>
+      <a href="{{ routes.collections_url }}/footwear">Footwear</a>
+      <a href="{{ routes.collections_url }}/baby-care">Baby Care</a>
+      <a href="{{ routes.collections_url }}">Gift Cards</a>
+      <a href="{{ routes.root_url }}pages/about">About Us</a>
+      <a href="{{ routes.root_url }}pages/contact">Contact</a>
+      <a href="{{ routes.collections_url }}/sale" class="amie-nav__sale">Sale</a>
+    </nav>
+
+    <div class="amie-actions">
+      <a href="{{ routes.search_url }}" class="amie-action-btn" aria-label="Search">
+        <svg class="amie-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </a>
+
+      <a href="{{ routes.collections_url }}" class="amie-action-btn" aria-label="Wishlist">
+        <svg class="amie-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="amie-badge amie-badge--sky">2</span>
+      </a>
+
+      <a href="{{ routes.cart_url }}" class="amie-action-btn" aria-label="Shopping Bag">
+        <svg class="amie-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="amie-badge amie-badge--coral">{% if cart.item_count > 0 %}{{ cart.item_count }}{% else %}1{% endif %}</span>
+      </a>
+    </div>
   </div>
 </header>
 
-{% stylesheet %}
-  header {
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  header a {
-    position: relative;
-    text-decoration: none;
-    color: var(--color-foreground);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  header a sup {
-    position: absolute;
-    left: 100%;
-    overflow: hidden;
-    max-width: var(--page-margin);
-  }
-  header svg {
-    width: 2rem;
-  }
-  header .header__menu,
-  header .header__icons {
-    display: flex;
-    gap: 1rem;
-  }
-{% endstylesheet %}
-
 {% schema %}
 {
-  "name": "t:general.header",
-  "settings": [
-    {
-      "type": "link_list",
-      "id": "menu",
-      "label": "t:labels.menu"
-    },
-    {
-      "type": "link_list",
-      "id": "customer_account_menu",
-      "label": "t:labels.customer_account_menu",
-      "default": "customer-account-main-menu"
-    }
-  ]
+  "name": "Amie Header",
+  "settings": []
 }
 {% endschema %}
