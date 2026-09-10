@@ -1,17 +1,46 @@
-{% comment %}
-  This section is used in the page template to render store pages like About us
-  or Contact us.
+<section class="amie-section">
+  <div class="amie-shell" style="max-width: 900px;">
+    <div class="amie-kicker">AMIE'S BABY STUDIO</div>
+    <h1 style="font-family: var(--font-display); font-size: 36px; font-weight: 800; color: #1b2d42; margin: 6px 0 24px;">{{ page.title }}</h1>
 
-  https://shopify.dev/docs/storefronts/themes/architecture/templates/page
-{% endcomment %}
+    <div class="amie-page-body" style="color: #334155; font-size: 15px; line-height: 1.7;">
+      {% if page.content != blank %}
+        {{ page.content }}
+      {% else %}
+        <!-- Default content fallback for About Us / Contact Us / Info pages -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 32px; margin-bottom: 32px;">
+          <h2 style="font-family: var(--font-display); font-size: 24px; color: #0082a6; margin-top: 0;">Little Things. Brighter Tomorrows ❤️</h2>
+          <p>
+            Welcome to <strong>Amie's Baby Studio</strong>! We curate premium, 100% GOTS-certified organic cotton clothing, flexible soft-sole pre-walker footwear, gentle care hampers, and playwear for newborns up to 10-year-olds.
+          </p>
 
-<h1>{{ page.title }}</h1>
+          <h3 style="font-family: var(--font-display); font-size: 18px; color: #1b2d42; margin-top: 24px;">Visit Our Physical Stores in Kochi</h3>
+          <ul style="list-style: none; padding: 0; margin: 12px 0 0;">
+            <li style="margin-bottom: 12px; padding-left: 20px; position: relative;">
+              <span style="position: absolute; left: 0; color: #f87171;">📍</span>
+              <strong>Mattanchery Halt Store:</strong><br>
+              Mattanchery Halt, beside KR Bakes, Willingdon Island, Kochi - 682029
+            </li>
+            <li style="padding-left: 20px; position: relative;">
+              <span style="position: absolute; left: 0; color: #f87171;">📍</span>
+              <strong>Piravom Store:</strong><br>
+              Ernakulam - Piravom Rd, Pazhoor, Piravom, Kochi - 686664
+            </li>
+          </ul>
 
-{{ page.content }}
+          <h3 style="font-family: var(--font-display); font-size: 18px; color: #1b2d42; margin-top: 24px;">Need Assistance?</h3>
+          <p>
+            Have questions about sizing, delivery, or custom gift hampers? Chat directly with our customer support team on WhatsApp at <strong>+91 98470 12345</strong> or email us at <strong>support@amiesbabystudio.com</strong>.
+          </p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
 
 {% schema %}
 {
-  "name": "t:general.page",
+  "name": "Page Content",
   "settings": []
 }
 {% endschema %}

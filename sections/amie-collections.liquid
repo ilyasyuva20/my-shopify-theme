@@ -1,9 +1,81 @@
 <section class="amie-section">
   <div class="amie-shell">
+    <div class="amie-section__heading">
+      <div>
+        <div class="amie-kicker">SHOP BY CATEGORY</div>
+        <h2>Explore Collections</h2>
+      </div>
+      <a class="amie-button" href="{{ routes.collections_url }}/all">View All Collections <span aria-hidden="true">→</span></a>
+    </div>
+
     <div class="amie-collection-grid">
-      {% assign handles = 'new-born,baby-clothing,kids-clothing,footwear,baby-care,accessories,toys-gifts,school-essentials' | split: ',' %}
-      {% for handle in handles %}{% assign collection = collections[handle] %}{% if collection != blank %}<a class="amie-collection-card" href="{{ collection.url }}"><div class="amie-collection-card__image">{% if collection.image %}{{ collection.image | image_url: width: 500 | image_tag: loading: 'lazy', alt: collection.title }}{% elsif collection.products.first.featured_image %}{{ collection.products.first.featured_image | image_url: width: 500 | image_tag: loading: 'lazy', alt: collection.title }}{% endif %}</div><p>{{ collection.title }}</p></a>{% endif %}{% endfor %}
+      <a class="amie-collection-card" href="{{ routes.collections_url }}/all">
+        <div class="amie-collection-card__image">
+          <img src="{{ 'fhd-banner-newborn.jpg' | asset_url }}" alt="New Born (0-6M)" width="300" height="360" loading="lazy">
+        </div>
+        <p>New Born</p>
+      </a>
+
+      <a class="amie-collection-card" href="{{ routes.collections_url }}/all">
+        <div class="amie-collection-card__image">
+          <img src="{{ 'b-essentials.jpg' | asset_url }}" alt="Baby (0-2 Yrs)" width="300" height="360" loading="lazy">
+        </div>
+        <p>Baby (0-2)</p>
+      </a>
+
+      <a class="amie-collection-card" href="{{ routes.collections_url }}/all">
+        <div class="amie-collection-card__image">
+          <img src="{{ 'fhd-banner-kids.jpg' | asset_url }}" alt="Kids (3-10 Yrs)" width="300" height="360" loading="lazy">
+        </div>
+        <p>Kids (3-10)</p>
+      </a>
+
+      <a class="amie-collection-card" href="{{ routes.collections_url }}/all">
+        <div class="amie-collection-card__image">
+          <img src="{{ 'b-footwear.jpg' | asset_url }}" alt="Footwear" width="300" height="360" loading="lazy">
+        </div>
+        <p>Footwear</p>
+      </a>
+
+      <a class="amie-collection-card" href="{{ routes.collections_url }}/all">
+        <div class="amie-collection-card__image">
+          <img src="{{ 'p-careset.jpg' | asset_url }}" alt="Baby Care" width="300" height="360" loading="lazy">
+        </div>
+        <p>Baby Care</p>
+      </a>
+
+      <a class="amie-collection-card" href="{{ routes.collections_url }}/all">
+        <div class="amie-collection-card__image">
+          <img src="{{ 'b-gifts.jpg' | asset_url }}" alt="Gift Hampers" width="300" height="360" loading="lazy">
+        </div>
+        <p>Gift Sets</p>
+      </a>
+
+      <a class="amie-collection-card" href="{{ routes.collections_url }}/all">
+        <div class="amie-collection-card__image">
+          <img src="{{ 'p-boysset.jpg' | asset_url }}" alt="Toys & Games" width="300" height="360" loading="lazy">
+        </div>
+        <p>Toys &amp; Games</p>
+      </a>
+
+      <a class="amie-collection-card" href="{{ routes.collections_url }}/all">
+        <div class="amie-collection-card__image">
+          <img src="{{ 'c-school.jpg' | asset_url }}" alt="School Essentials" width="300" height="360" loading="lazy">
+        </div>
+        <p>School</p>
+      </a>
     </div>
   </div>
 </section>
-{% schema %}{"name":"Age collections","settings":[],"presets":[{"name":"Age collections"}]}{% endschema %}
+
+{% schema %}
+{
+  "name": "Age collections",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Age collections"
+    }
+  ]
+}
+{% endschema %}

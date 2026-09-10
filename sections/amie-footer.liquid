@@ -1,2 +1,74 @@
-<footer class="amie-footer"><div class="amie-shell amie-footer__grid"><div><div class="amie-logo" style="color:#faf8f5">Amie’s <span>Baby Studio</span></div><p>Premium fashion, footwear and essentials for newborns to ten year olds, made for everyday joy.</p></div><div><h3>Quick Links</h3><ul>{% for link in section.settings.menu.links %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% endfor %}</ul></div><div><h3>Customer Care</h3><ul><li><a href="{{ routes.search_url }}">FAQs</a></li><li><a href="{{ pages['shipping-policy'].url }}">Shipping Policy</a></li><li><a href="{{ pages['returns'].url }}">Returns &amp; Exchanges</a></li><li><a href="{{ shop.privacy_policy.url }}">Privacy Policy</a></li></ul></div><div><h3>Our Stores in Kochi</h3><p>Mattanchery Halt, beside KR Bakes,<br>Willingdon Island, Kochi - 682029</p><p>Ernakulam - Piravom Rd, Pazhoor,<br>Piravom, Kochi - 686664</p></div></div><div class="amie-footer__bottom"><div class="amie-shell">Little Things. Brighter Tomorrows. &nbsp; | &nbsp; © {{ 'now' | date: '%Y' }} {{ shop.name }}</div></div></footer>
-{% schema %}{"name":"Amie footer","settings":[{"type":"link_list","id":"menu","label":"Footer menu"}],"presets":[{"name":"Amie footer"}]}{% endschema %}
+<footer class="amie-footer">
+  <div class="amie-shell amie-footer__grid">
+    <div>
+      <a href="{{ routes.root_url }}" class="amie-logo-lockup" aria-label="Amie's Baby Studio Home" style="margin-bottom: 14px;">
+        <span class="amie-logo-text">
+          <span class="amie-ch amie-ch--yellow">A</span><span class="amie-ch amie-ch--sky">m</span><span class="amie-ch amie-ch--green amie-ch--i">i<svg class="amie-daisy" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5.6" r="5.1"/><circle cx="18.1" cy="10" r="5.1"/><circle cx="15.8" cy="17.2" r="5.1"/><circle cx="8.2" cy="17.2" r="5.1"/><circle cx="5.9" cy="10" r="5.1"/><circle cx="12" cy="12" r="5.6"/></svg></span><span class="amie-ch amie-ch--coral">e</span><span class="amie-ch amie-ch--green">’</span><span class="amie-ch amie-ch--sky">s</span>
+        </span>
+        <span class="amie-logo-sub" style="color: rgba(250,248,245,0.85);">
+          BABY STUDIO
+        </span>
+      </a>
+      <p>Premium fashion, footwear and essentials for newborns to ten year olds, made for everyday joy.</p>
+    </div>
+
+    <div>
+      <h3>Quick Links</h3>
+      <ul>
+        {% if section.settings.menu != blank and section.settings.menu.links.size > 0 %}
+          {% for link in section.settings.menu.links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        {% else %}
+          <li><a href="{{ routes.collections_url }}/all">New Born Essentials</a></li>
+          <li><a href="{{ routes.collections_url }}/all">Baby Clothing (0-2 Yrs)</a></li>
+          <li><a href="{{ routes.collections_url }}/all">Kids Wear (3-10 Yrs)</a></li>
+          <li><a href="{{ routes.collections_url }}/all">Footwear &amp; Pre-Walkers</a></li>
+          <li><a href="{{ routes.collections_url }}/all">Gift Cards &amp; Hampers</a></li>
+          <li><a href="{{ routes.root_url }}pages/about">About Our Studio</a></li>
+          <li><a href="{{ routes.root_url }}pages/contact">Contact Us</a></li>
+        {% endif %}
+      </ul>
+    </div>
+
+    <div>
+      <h3>Customer Care</h3>
+      <ul>
+        <li><a href="{{ routes.root_url }}pages/contact">Help &amp; FAQs</a></li>
+        <li><a href="{{ routes.root_url }}pages/contact">Shipping Policy</a></li>
+        <li><a href="{{ routes.root_url }}pages/contact">Returns &amp; Exchanges</a></li>
+        <li><a href="{{ routes.root_url }}pages/contact">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Our Stores in Kochi</h3>
+      <p><strong>Mattanchery Halt Store:</strong><br>Mattanchery Halt, beside KR Bakes,<br>Willingdon Island, Kochi - 682029</p>
+      <p style="margin-top: 12px;"><strong>Piravom Store:</strong><br>Ernakulam - Piravom Rd, Pazhoor,<br>Piravom, Kochi - 686664</p>
+    </div>
+  </div>
+
+  <div class="amie-footer__bottom">
+    <div class="amie-shell">
+      Little Things. Brighter Tomorrows. &nbsp; | &nbsp; © {{ 'now' | date: '%Y' }} {{ shop.name }}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Amie footer",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Footer menu"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Amie footer"
+    }
+  ]
+}
+{% endschema %}

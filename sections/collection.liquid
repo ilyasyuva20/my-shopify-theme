@@ -1,47 +1,116 @@
-{% comment %}
-  This section is used in the collection template to render collection page
-  listing all products within a collection.
-
-  https://shopify.dev/docs/storefronts/themes/architecture/templates/collection
-{% endcomment %}
-
-<h1>{{ collection.title }}</h1>
-
-<div class="collection-products">
-  {% paginate collection.products by 20 %}
-    {% for product in collection.products %}
-      <div class="collection-product">
-        {% if product.featured_image %}
-          {% render 'image',
-            class: 'collection-product__image',
-            image: product.featured_image,
-            url: product.url,
-            width: 400,
-            height: 400,
-            crop: 'center'
-          %}
-        {% endif %}
-        <div class="collection-product__content">
-          <p>{{ product.title | escape | link_to: product.url }}</p>
-          <p>{{ product.price | money }}</p>
-        </div>
+<section class="amie-section">
+  <div class="amie-shell">
+    <div class="amie-section__heading">
+      <div>
+        <div class="amie-kicker">COLLECTION</div>
+        <h2>{{ collection.title | default: "Amie's Baby Studio Collection" }}</h2>
       </div>
-    {% endfor %}
+      <a class="amie-button" href="{{ routes.collections_url }}/all">All Collections <span aria-hidden="true">→</span></a>
+    </div>
 
-    {{ paginate | default_pagination }}
-  {% endpaginate %}
-</div>
+    {% if collection.description != blank %}
+      <div style="margin-bottom: 24px; color: #475569; font-size: 15px; line-height: 1.6;">
+        {{ collection.description }}
+      </div>
+    {% endif %}
 
-{% stylesheet %}
-  .collection-products {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  }
-{% endstylesheet %}
+    <div class="amie-products">
+      {% paginate collection.products by 24 %}
+        {% if collection.products.size > 0 %}
+          {% for product in collection.products %}
+            <article class="amie-product">
+              <a class="amie-product__image" href="{{ product.url }}">
+                {% if product.featured_image %}
+                  <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" width="300" height="300" loading="lazy">
+                {% else %}
+                  <img src="{{ 'fhd-banner-kids.jpg' | asset_url }}" alt="{{ product.title | escape }}" width="300" height="300" loading="lazy">
+                {% endif %}
+              </a>
+              <div class="amie-product__body">
+                <h3><a href="{{ product.url }}">{{ product.title }}</a></h3>
+                <span class="amie-price">{{ product.price | money }}</span>
+                {% if product.compare_at_price > product.price %}
+                  <span class="amie-compare">{{ product.compare_at_price | money }}</span>
+                {% endif %}
+              </div>
+            </article>
+          {% endfor %}
+        {% else %}
+          <!-- Sample items fallback if collection is empty in Shopify -->
+          <article class="amie-product">
+            <a class="amie-product__image" href="{{ routes.collections_url }}/all">
+              <img src="{{ 'p-boysset.jpg' | asset_url }}" alt="Organic Cotton Boys Set" width="300" height="300" loading="lazy">
+            </a>
+            <div class="amie-product__body">
+              <h3><a href="{{ routes.collections_url }}/all">Organic Cotton Boys Set</a></h3>
+              <span class="amie-price">₹1,299</span>
+            </div>
+          </article>
+
+          <article class="amie-product">
+            <a class="amie-product__image" href="{{ routes.collections_url }}/all">
+              <img src="{{ 'p-careset.jpg' | asset_url }}" alt="Gentle Baby Care Gift Set" width="300" height="300" loading="lazy">
+            </a>
+            <div class="amie-product__body">
+              <h3><a href="{{ routes.collections_url }}/all">Gentle Baby Care Gift Set</a></h3>
+              <span class="amie-price">₹1,899</span>
+            </div>
+          </article>
+
+          <article class="amie-product">
+            <a class="amie-product__image" href="{{ routes.collections_url }}/all">
+              <img src="{{ 'insta-girls.jpg' | asset_url }}" alt="Floral Summer Dress" width="300" height="300" loading="lazy">
+            </a>
+            <div class="amie-product__body">
+              <h3><a href="{{ routes.collections_url }}/all">Floral Summer Dress</a></h3>
+              <span class="amie-price">₹1,499</span>
+            </div>
+          </article>
+
+          <article class="amie-product">
+            <a class="amie-product__image" href="{{ routes.collections_url }}/all">
+              <img src="{{ 'insta-pink-dress.jpg' | asset_url }}" alt="Pink Party Frill Dress" width="300" height="300" loading="lazy">
+            </a>
+            <div class="amie-product__body">
+              <h3><a href="{{ routes.collections_url }}/all">Pink Party Frill Dress</a></h3>
+              <span class="amie-price">₹1,699</span>
+            </div>
+          </article>
+
+          <article class="amie-product">
+            <a class="amie-product__image" href="{{ routes.collections_url }}/all">
+              <img src="{{ 'b-footwear.jpg' | asset_url }}" alt="Soft Sole Pre-Walker Shoes" width="300" height="300" loading="lazy">
+            </a>
+            <div class="amie-product__body">
+              <h3><a href="{{ routes.collections_url }}/all">Soft Sole Pre-Walker Shoes</a></h3>
+              <span class="amie-price">₹899</span>
+            </div>
+          </article>
+
+          <article class="amie-product">
+            <a class="amie-product__image" href="{{ routes.collections_url }}/all">
+              <img src="{{ 'insta-blankets.jpg' | asset_url }}" alt="Organic Cotton Swaddle Blanket" width="300" height="300" loading="lazy">
+            </a>
+            <div class="amie-product__body">
+              <h3><a href="{{ routes.collections_url }}/all">Organic Cotton Swaddle Blanket</a></h3>
+              <span class="amie-price">₹999</span>
+            </div>
+          </article>
+        {% endif %}
+
+        {% if paginate.pages > 1 %}
+          <div style="grid-column: 1 / -1; margin-top: 32px; text-align: center;">
+            {{ paginate | default_pagination }}
+          </div>
+        {% endif %}
+      {% endpaginate %}
+    </div>
+  </div>
+</section>
 
 {% schema %}
 {
-  "name": "t:general.collection",
+  "name": "Collection Grid",
   "settings": []
 }
 {% endschema %}
